@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Stats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Noms sent</th>
+      <th>Noms received</th>
+      <th>Mvp wins</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stats.each do |stat| %>
+      <tr>
+        <td><%= stat.user_id %></td>
+        <td><%= stat.noms_sent %></td>
+        <td><%= stat.noms_received %></td>
+        <td><%= stat.mvp_wins %></td>
+        <td><%= link_to 'Show', stat %></td>
+        <td><%= link_to 'Edit', edit_stat_path(stat) %></td>
+        <td><%= link_to 'Destroy', stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stat', new_stat_path %>

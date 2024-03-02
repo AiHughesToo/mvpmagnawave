@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom type:</strong>
+  <%= @nomination.nom_type %>
+</p>
+
+<p>
+  <strong>Sender:</strong>
+  <%= @nomination.sender_id %>
+</p>
+
+<p>
+  <strong>Sender name:</strong>
+  <%= @nomination.sender_name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @nomination.user_id %>
+</p>
+
+<p>
+  <strong>Receiver name:</strong>
+  <%= @nomination.receiver_name %>
+</p>
+
+<p>
+  <strong>Receiver img link:</strong>
+  <%= @nomination.receiver_img_link %>
+</p>
+
+<p>
+  <strong>Nom body:</strong>
+  <%= @nomination.nom_body %>
+</p>
+
+<%= link_to 'Edit', edit_nomination_path(@nomination) %> |
+<%= link_to 'Back', nominations_path %>

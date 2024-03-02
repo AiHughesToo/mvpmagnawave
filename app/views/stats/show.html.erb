@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @stat.user_id %>
+</p>
+
+<p>
+  <strong>Noms sent:</strong>
+  <%= @stat.noms_sent %>
+</p>
+
+<p>
+  <strong>Noms received:</strong>
+  <%= @stat.noms_received %>
+</p>
+
+<p>
+  <strong>Mvp wins:</strong>
+  <%= @stat.mvp_wins %>
+</p>
+
+<%= link_to 'Edit', edit_stat_path(@stat) %> |
+<%= link_to 'Back', stats_path %>
