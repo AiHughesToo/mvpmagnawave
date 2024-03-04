@@ -12,41 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :nom_type %>
-    <%= form.text_field :nom_type %>
+    <%= form.label "Nomination Type" %>
+    <%= form.select(:nom_type, [ ['MVP Nomination', 'mvp'],['Shout Out', 'shoutout'] ], :prompt => 'Select One', :class =>'form-select') %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label "Who are you nominating" %>
+    <%= form.select(:user_id, User.where.not(id: current_user.id).order('last_name').collect { |user| [user.first_name + " " + user.last_name, user.id] }) %>
   </div>
 
   <div class="field">
-    <%= form.label :sender_id %>
-    <%= form.number_field :sender_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :sender_name %>
-    <%= form.text_field :sender_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :receiver_name %>
-    <%= form.text_field :receiver_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :receiver_img_link %>
-    <%= form.text_field :receiver_img_link %>
-  </div>
-
-  <div class="field">
-    <%= form.label :nom_body %>
+    <%= form.label "Say something nice:" %>
     <%= form.text_field :nom_body %>
   </div>
 
+  
+ 
   <div class="actions">
-    <%= form.submit %>
+    <div class="btn-holder">
+      <%= form.submit class: "create-button" %>
+    </div>
   </div>
 <% end %>

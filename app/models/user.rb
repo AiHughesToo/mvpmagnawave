@@ -5,12 +5,18 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :stat
+  has_many :nomination
+  
   after_create :init_stat
 
   validates :first_name, :last_name, presence: true
 
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  def my_nominations
+   my_noms = Nomination.where(user_id: :id)
   end
 
 

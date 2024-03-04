@@ -15,7 +15,9 @@
       <div class="container mt-2">
       <div class="row">
         <div class="col-md-2">
-          <img src="https://img.freepik.com/free-photo/headshot-charismatic-pleasant-friendly-european-woman-short-chestnut-haircut-smiling-positive-feeling-happy-upbeat-enjoying-lifes-casually-talking-friends-amused-cheerful-standing-white-background_176420-34680.jpg" alt="Profile Picture" class="nom-image">
+         <div id="profile-image-bg" class="image-bg-holder">
+          <img src=<%= nomination.receiver_img_link %> alt="Profile Picture" class="nom-image">
+         </div>
         </div>
         <div class="col-md-8">
           <h2><%= nomination.receiver_name %></h2>
@@ -23,9 +25,9 @@
         </div>
         <div class="col-md-2">
         <% if nomination.nom_type == "mvp"%>
-        <img src="https://www.creativefabrica.com/wp-content/uploads/2022/11/10/MVP-gold-medal-award-on-white-background-Graphics-45934671-1-1-580x387.jpg" alt="Profile Picture" class="nom-image">
+        <img src="https://www.creativefabrica.com/wp-content/uploads/2022/11/10/MVP-gold-medal-award-on-white-background-Graphics-45934671-1-1-580x387.jpg" alt="Profile Picture" class="nom-type-image">
         <% else %>
-        <img src="https://renegade-promotions.com/wp-content/uploads/2021/05/148-1485119_shout-out-png-download-shout-out-transparent-png.png" alt="Profile Picture" class="nom-image">
+        <img src="https://renegade-promotions.com/wp-content/uploads/2021/05/148-1485119_shout-out-png-download-shout-out-transparent-png.png" alt="Profile Picture" class="nom-type-image">
         <% end %>
         
         </div>

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     before_action :authenticate_user!, only: %i[ show edit update destroy ] 
 
   def index
-    @users = User.all
+    @users = User.all.order('last_name')
   end
 
   def show
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   private def user_params
-    params.require(:user).permit(:first_name, :last_name)
+    params.require(:user).permit(:first_name, :last_name, :image_link)
   end
 
 end

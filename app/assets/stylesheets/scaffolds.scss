@@ -63,3 +63,47 @@ div.actions {
 
 label {
   display: block; }
+  
+select {
+    padding: 5px;
+    border-radius: 10px;
+    border-color: rgb(234, 239, 246);
+    font-size: 20px;
+  }
+  input {
+    padding: 5px;
+    border-radius: 10px;
+    border-color: rgba(234, 239, 246, 0.411);
+    border-width: 1px;
+    font-size: 20px;
+    width: 80%;
+  }
+
+  .btn-holder {
+   margin: auto;
+    width: 40%;
+   
+  }
+
+  .create-button {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 25px;
+    transition: 0.5s;
+    margin-top: 10px;
+    border: 2px solid rgb(137, 137, 137);
+    background: #26336300;
+    color: rgb(50, 51, 53);
+    width: auto;
+    align-self: center;
+  }
+  
+  .create-button:hover {
+    background: #394f9e;
+    color: #fff;
+    border: 1px solid #e0e6e9;
+  }

@@ -1,39 +1,27 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nom type:</strong>
-  <%= @nomination.nom_type %>
-</p>
+<div class="nom-holder" > 
+      <div class="container mt-2">
+      <div class="row">
+        <div class="col-md-2">
+        <img src=<%= @nomination.receiver_img_link %> alt="Profile Picture" class="nom-image">
+         
+        </div>
+        <div class="col-md-8">
+          <h2><%= @nomination.receiver_name %></h2>
+          <p><%= @nomination.nom_body %></p>
+        </div>
+        <div class="col-md-2">
+        <% if @nomination.nom_type == "mvp"%>
+        <img src="https://www.creativefabrica.com/wp-content/uploads/2022/11/10/MVP-gold-medal-award-on-white-background-Graphics-45934671-1-1-580x387.jpg" alt="Profile Picture" class="nom-type-image">
+        <% else %>
+        <img src="https://renegade-promotions.com/wp-content/uploads/2021/05/148-1485119_shout-out-png-download-shout-out-transparent-png.png" alt="Profile Picture" class="nom-type-image">
+        <% end %>
+        
+        </div>
+      </div>
+    </div>
+    <%= link_to 'Edit', edit_nomination_path(@nomination) %> |
+    <%= link_to 'Back', nominations_path %>
+</div>
 
-<p>
-  <strong>Sender:</strong>
-  <%= @nomination.sender_id %>
-</p>
 
-<p>
-  <strong>Sender name:</strong>
-  <%= @nomination.sender_name %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @nomination.user_id %>
-</p>
-
-<p>
-  <strong>Receiver name:</strong>
-  <%= @nomination.receiver_name %>
-</p>
-
-<p>
-  <strong>Receiver img link:</strong>
-  <%= @nomination.receiver_img_link %>
-</p>
-
-<p>
-  <strong>Nom body:</strong>
-  <%= @nomination.nom_body %>
-</p>
-
-<%= link_to 'Edit', edit_nomination_path(@nomination) %> |
-<%= link_to 'Back', nominations_path %>

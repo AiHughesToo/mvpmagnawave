@@ -1,9 +1,16 @@
 class NominationsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_nomination, only: %i[ show edit update destroy ]
 
   # GET /nominations or /nominations.json
   def index
-    @nominations = Nomination.all
+   # @nominations = Nomination.all.order(created_at: :desc)
+   if current_user.admin
+    @nominations = Nomination.where(created_at: 1.week.ago..Time.now).order(created_at: :desc)
+   else
+    @nominations = Nomination.where(created_at: 2.weeks.ago..Time.now).order(created_at: :desc)
+   end
+   
   end
 
   # GET /nominations/1 or /nominations/1.json
@@ -21,7 +28,23 @@ class NominationsController < ApplicationController
 
   # POST /nominations or /nominations.json
   def create
+    rstat = Stat.where(user_id: nomination_params[:user_id])
+    
+    rstat[0].noms_received = (rstat[0].noms_received || 0)+ 1
+    rstat[0].save
+
+    sstat = Stat.where(user_id: current_user.id)
+    sstat[0].noms_sent = (sstat[0].noms_sent || 0) + 1
+    sstat[0].save
+  
+    receiver = User.find(nomination_params[:user_id])
+
+
     @nomination = Nomination.new(nomination_params)
+    @nomination.sender_id = current_user.id
+    @nomination.sender_name = current_user.first_name
+    @nomination.receiver_name = receiver.first_name + " " + receiver.last_name
+    @nomination.receiver_img_link = receiver.image_link
 
     respond_to do |format|
       if @nomination.save

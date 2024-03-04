@@ -1,2 +1,17 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div id="nom-container" class="home-page-notifications">
+  
+    <% @users.each do |user| %>
+      <div class="nom-holder" > 
+      <div class="container mt-2">
+      <div class="row">
+        <div class="col-md-2">
+          <img src=<%= user.image_link %> alt="Profile Picture" class="nom-image">
+        </div>
+        <div class="col-md-8">
+          <h2><%= user.full_name %></h2>
+        </div>
+      </div>
+    </div>
+      </div>
+    <% end %>
+  </div>

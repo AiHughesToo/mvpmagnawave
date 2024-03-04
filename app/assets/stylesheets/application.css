@@ -300,6 +300,17 @@
       left: -100%;
     }
   }
+
+  .nav-btn {
+    background:rgba(0, 0, 0, 0.1);
+    padding: 3px;
+    font-size: 12px;
+    color:#fff;
+    text-transform: uppercase;
+    border-width: 0;
+    width: auto;
+    margin-left: 10px;
+  }
   
   /**
   * Mobile Navigation 
@@ -427,10 +438,29 @@
     padding-top: 5px;
     padding-bottom: 5px;
     margin-top: 10px;
+    margin-bottom: 10px;
   }
   .nom-image {
     border-radius: 50%;
     width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+
+  .image-bg-holder {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    background:rgba(190, 190, 190, 0.88);
+    padding-top: 10px;
+    padding-left: 10px;
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2);
+  }
+
+  .nom-type-image {
+    border-radius: 10%;
+    width: 120px;
     height: 100px;
     object-fit: cover;
   }
@@ -451,8 +481,10 @@
   
   .nom-btn:hover {
     background: #394f9e;
+    color: #fff;
     border: 1px solid #e0e6e9;
   }
+
   /*--------------------------------------------------------------
   # Hero Section
   --------------------------------------------------------------*/
@@ -1389,281 +1421,15 @@
     color: #fff;
     border-radius: 0 0 25px 25px;
   }
-  
-  /*--------------------------------------------------------------
-  # F.A.Q
+   /*--------------------------------------------------------------
+  # Forms and inputs
   --------------------------------------------------------------*/
-  .faq {
-    background: #f5faf0;
-  }
-  
-  .faq .section-title h2 {
-    background: #e9f3dd;
-  }
-  
-  .faq .faq-list {
-    padding: 0 100px;
-  }
-  
-  .faq .faq-list ul {
-    padding: 0;
-    list-style: none;
-  }
-  
-  .faq .faq-list li+li {
-    margin-top: 15px;
-  }
-  
-  .faq .faq-list li {
-    padding: 20px;
-    background: #fff;
-    border-radius: 4px;
-    position: relative;
-  }
-  
-  .faq .faq-list a {
-    display: block;
-    position: relative;
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 500;
-    padding: 0 30px;
-    outline: none;
-    cursor: pointer;
-  }
-  
-  .faq .faq-list .icon-help {
-    font-size: 24px;
-    position: absolute;
-    right: 0;
-    left: 20px;
-    color: #cbe1ac;
-  }
-  
-  .faq .faq-list .icon-show,
-  .faq .faq-list .icon-close {
-    font-size: 24px;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  
-  .faq .faq-list p {
-    margin-bottom: 0;
-    padding: 10px 0 0 0;
-  }
-  
-  .faq .faq-list .icon-show {
-    display: none;
-  }
-  
-  .faq .faq-list a.collapsed {
-    color: #343a40;
-  }
-  
-  .faq .faq-list a.collapsed:hover {
-    color: #8fc04e;
-  }
-  
-  .faq .faq-list a.collapsed .icon-show {
-    display: inline-block;
-  }
-  
-  .faq .faq-list a.collapsed .icon-close {
-    display: none;
-  }
-  
-  @media (max-width: 1200px) {
-    .faq .faq-list {
-      padding: 0;
-    }
-  }
-  
-  /*--------------------------------------------------------------
-  # Contact
-  --------------------------------------------------------------*/
-  .contact .info {
-    width: 100%;
-    background: #fff;
-  }
-  
-  .contact .info i {
+.form-select {
+  padding: 5px;
+    border-radius: 10px;
+    border-color: rgb(234, 239, 246);
     font-size: 20px;
-    color: #8fc04e;
-    float: left;
-    width: 44px;
-    height: 44px;
-    background: #f3f8ec;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .contact .info h4 {
-    padding: 0 0 0 60px;
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: #353535;
-  }
-  
-  .contact .info p {
-    padding: 0 0 0 60px;
-    margin-bottom: 0;
-    font-size: 14px;
-    color: #686868;
-  }
-  
-  .contact .info .email,
-  .contact .info .phone {
-    margin-top: 40px;
-  }
-  
-  .contact .info .email:hover i,
-  .contact .info .address:hover i,
-  .contact .info .phone:hover i {
-    background: #8fc04e;
-    color: #fff;
-  }
-  
-  .contact .php-email-form {
-    width: 100%;
-    background: #fff;
-  }
-  
-  .contact .php-email-form .form-group {
-    padding-bottom: 8px;
-  }
-  
-  .contact .php-email-form .error-message {
-    display: none;
-    color: #fff;
-    background: #ed3c0d;
-    text-align: left;
-    padding: 15px;
-    font-weight: 600;
-  }
-  
-  .contact .php-email-form .error-message br+br {
-    margin-top: 25px;
-  }
-  
-  .contact .php-email-form .sent-message {
-    display: none;
-    color: #fff;
-    background: #18d26e;
-    text-align: center;
-    padding: 15px;
-    font-weight: 600;
-  }
-  
-  .contact .php-email-form .loading {
-    display: none;
-    background: #fff;
-    text-align: center;
-    padding: 15px;
-  }
-  
-  .contact .php-email-form .loading:before {
-    content: "";
-    display: inline-block;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    margin: 0 10px -6px 0;
-    border: 3px solid #18d26e;
-    border-top-color: #eee;
-    animation: animate-loading 1s linear infinite;
-  }
-  
-  .contact .php-email-form input,
-  .contact .php-email-form textarea {
-    border-radius: 0;
-    box-shadow: none;
-    font-size: 14px;
-  }
-  
-  .contact .php-email-form input {
-    height: 44px;
-  }
-  
-  .contact .php-email-form textarea {
-    padding: 10px 12px;
-  }
-  
-  .contact .php-email-form button[type=submit] {
-    background: #8fc04e;
-    border: 0;
-    padding: 10px 24px;
-    color: #fff;
-    transition: 0.4s;
-    border-radius: 50px;
-  }
-  
-  .contact .php-email-form button[type=submit]:hover {
-    background: #7aa93c;
-  }
-  
-  @keyframes animate-loading {
-    0% {
-      transform: rotate(0deg);
-    }
-  
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  /*--------------------------------------------------------------
-  # Breadcrumbs
-  --------------------------------------------------------------*/
-  .breadcrumbs {
-    padding: 15px 0;
-    background: #f4f4f4;
-    min-height: 40px;
-  }
-  
-  .breadcrumbs h2 {
-    font-size: 24px;
-    padding-top: 4px;
-    font-weight: 500;
-  }
-  
-  .breadcrumbs ol {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .breadcrumbs ol li+li {
-    padding-left: 10px;
-  }
-  
-  .breadcrumbs ol li+li::before {
-    display: inline-block;
-    padding-right: 10px;
-    color: #4f4f4f;
-    content: "/";
-  }
-  
-  @media (max-width: 768px) {
-    .breadcrumbs .d-flex {
-      display: block !important;
-    }
-  
-    .breadcrumbs ol {
-      display: block;
-    }
-  
-    .breadcrumbs ol li {
-      display: inline-block;
-    }
-  }
+}
   
   /*--------------------------------------------------------------
   # Footer
