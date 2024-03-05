@@ -3,7 +3,9 @@
   <div class="container mt-2">
       <div class="row">
           <div class="col-md-2">
-           <img src=<%=current_user.image_link %> alt="Profile Picture" class="nom-image">
+          <div id="profile-image-bg" class="image-bg-holder">
+             <img src=<%=current_user.image_link %> alt="Profile Picture" class="nom-image">
+           </div>
           </div>
          <div class="col-md-10">
           <h2><%= current_user.full_name%></h2>
