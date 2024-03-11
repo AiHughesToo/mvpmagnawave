@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @mvpwin.details %>
+</p>
+
+<p>
+  <strong>Winner IDs:</strong>
+  <%= @mvpwin.winner_ids %>
+</p>
+
+
+<%= link_to 'Edit', edit_mvpwin_path(@mvpwin) %> |
+<%= link_to 'Back', mvpwins_path %>

@@ -1,0 +1,2 @@
+class Mvpwin < ApplicationRecord
+end

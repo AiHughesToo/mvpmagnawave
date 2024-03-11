@@ -1,0 +1,27 @@
+
+<% @c_noms = Nomination.where(created_at: 1.week.ago..Time.now, nom_type: 'mvp').order(created_at: :desc) %>
+<% @exp_nom = @c_noms.each.with_object(Hash.new(0)) { |e, c| c[e[:receiver_name]] += 1 }.then { |c|  @c_noms.sort_by { |e| -c[e[:receiver_name]] } } %>
+<% @uniq_noms = @exp_nom.uniq {|n| n[:receiver_name]} %>
+<%= form_with(model: mvpwin) do |form| %>
+
+  <div class="field">
+ 
+  <% @uniq_noms.each do |nom| %>
+    
+    <label>
+      <%= form.check_box :winner_ids, { multiple: true }, Integer(nom.user_id), nil %>
+      <%= nom.receiver_name %> (<%= @c_noms.count { |n| n[:receiver_name] == nom.receiver_name } %>)
+    </label>
+    <br>
+  <% end %>
+</div>
+
+  <div class="field">
+    <%= form.label :details %>
+    <%= form.text_field :details %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

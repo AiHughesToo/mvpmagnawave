@@ -5,7 +5,9 @@
 
       <div class="container" >
         <div class="text-center">
+        <% if !current_user.admin %>
           <a class="nom-btn" href="/nominations/new" >Send Shoutout</a>
+          <% end %>
         </div>
       </div>
   <div id="nom-container" class="home-page-notifications">
@@ -22,6 +24,9 @@
         <div class="col-md-8">
           <h2><%= nomination.receiver_name %></h2>
           <p><%= nomination.nom_body %></p>
+          <% if current_user.admin %>
+          <p>BY: <%= nomination.sender_name %></p>
+        <% end %>
         </div>
         <div class="col-md-2">
         <% if nomination.nom_type == "mvp"%>

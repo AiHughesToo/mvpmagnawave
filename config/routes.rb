@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+  resources :mvpwins
+  get 'user/secret_update/:id' => 'users#secret_admin_update'
   resources :nominations
   devise_for :users
   devise_scope :user do  

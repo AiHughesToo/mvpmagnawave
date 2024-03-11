@@ -1,0 +1,51 @@
+<% if current_user.admin  %>
+<section id="nom" class="nom-section">
+
+  <div id="nom-container" class="home-page-notifications">
+
+  <% @c_noms = Nomination.where(created_at: 1.week.ago..Time.now, nom_type: 'mvp').order(created_at: :desc) %>
+  <% @exp_nom = @c_noms.each.with_object(Hash.new(0)) { |e, c| c[e[:receiver_name]] += 1 }.then { |c|  @c_noms.sort_by { |e| -c[e[:receiver_name]] } } %>
+  <% @uniq_noms = @exp_nom.uniq {|n| n[:receiver_name]} %>
+
+  <div class="nom-holder" > 
+    <h3>Nominees This Week </h3>
+
+    <div class="col-md-10">
+      <%= render 'form', mvpwin: @mvpwin %>
+    </div> 
+  </div>
+    
+    <% @exp_nom.reverse.each do |nomination| %>
+      <div class="nom-holder" > 
+      <div class="container mt-2">
+      <div class="row">
+        <div class="col-md-2">
+         <div id="profile-image-bg" class="image-bg-holder">
+          <img src=<%= nomination.receiver_img_link %> alt="Profile Picture" class="nom-image">
+         </div>
+        </div>
+        <div class="col-md-8">
+          <h2><%= nomination.receiver_name %></h2>
+          <p><%= nomination.nom_body %></p>
+          <% if current_user.admin %>
+          <p>BY: <%= nomination.sender_name %></p>
+        <% end %>
+        </div>
+        <div class="col-md-2">
+        
+        </div>
+      </div>
+    </div>
+      </div>
+    <% end %>
+  </div>
+</section>
+<% else %>
+
+<section id="nom" class="nom-section">
+  <div id="nom-container" class="home-page-notifications">
+
+    <p> Nice try sly, but you ain't suppose to be here</p>
+  </div>
+</section>
+<% end %>

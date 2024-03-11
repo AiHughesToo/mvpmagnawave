@@ -1,0 +1,36 @@
+<section id="nom" class="nom-section">
+
+  <div id="nom-container" class="home-page-notifications">
+
+  <p id="notice"><%= notice %></p>
+
+<h1>MVP wins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Noms sent</th>
+      <th>Noms received</th>
+      <th>Mvp wins</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mvpwins.each do |mvpwin| %>
+      <tr>
+        <td><%= mvpwin.details %></td>
+        <td><%= link_to 'Show', mvpwin %></td>
+        <td><%= link_to 'Edit', edit_mvpwin_path(mvpwin) %></td>
+        <td><%= link_to 'Destroy', mvpwin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stat', new_stat_path %>
+  </div>
+</section>

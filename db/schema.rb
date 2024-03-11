@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_03_04_211755) do
+ActiveRecord::Schema.define(version: 2024_03_06_215048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "mvpwins", force: :cascade do |t|
+    t.string "details"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "winner_ids", default: [], array: true
+  end
 
   create_table "nominations", force: :cascade do |t|
     t.string "nom_type"
