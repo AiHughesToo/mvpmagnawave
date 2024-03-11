@@ -78,11 +78,12 @@
               <li><a class="nav-btn" href="/nominations">Home</a></li>
               <li><a class="nav-btn" href="/users">Users</a></li> 
               <li><a class="nav-btn" href="/stats">Stats</a></li> 
-              <% if current_user.admin %>
-              <li><a class="nav-btn" href="/mvpwins/new">MVP</a></li> 
-              <% end %>
+             
               <% if user_signed_in? %>
               <li><a class="nav-btn" href="/users/<%= current_user.id %>">My Profile</a></li>
+                 <% if current_user.admin %>
+                 <li><a class="nav-btn" href="/mvpwins/new">MVP</a></li> 
+                 <% end %>
                 <%= button_to 'Logout', destroy_user_session_path, {class: 'nav-btn'} %>
               <% else %>
                 <%= link_to 'Login', new_user_session_path %>
