@@ -7,10 +7,10 @@
   <% @exp_nom = @c_noms.each.with_object(Hash.new(0)) { |e, c| c[e[:receiver_name]] += 1 }.then { |c|  @c_noms.sort_by { |e| -c[e[:receiver_name]] } } %>
   <% @uniq_noms = @exp_nom.uniq {|n| n[:receiver_name]} %>
 
-  <div class="nom-holder" > 
-    <h3>Nominees This Week </h3>
+  <div class="mvp-form-holder" > 
+    <h3>This Weeks Nominees </h3>
 
-    <div class="col-md-10">
+    <div class="mvp-form">
       <%= render 'form', mvpwin: @mvpwin %>
     </div> 
   </div>

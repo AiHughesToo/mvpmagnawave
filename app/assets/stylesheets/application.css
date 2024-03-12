@@ -640,7 +640,21 @@ body.dark .logo img {
   .nav-btn:hover {
     color: #FFA62B;
   }
-  
+
+  .nav-btn-logout {
+    background:rgba(0, 0, 0, 0.0);
+    padding: 3px;
+    font-size: 12px;
+    color:#fff;
+    text-transform: uppercase;
+    border-width: 0;
+    width: auto;
+    margin-left: 20px;
+  }
+  .nav-btn-logout:hover {
+    color: #FFA62B;
+  }
+
   /**
   * Mobile Navigation 
   */
@@ -676,6 +690,18 @@ body.dark .logo img {
     }
 
     .nav-btn {
+      background:rgba(0, 0, 0, 0.0);
+      padding: 3px;
+      font-size: 18px;
+      font-weight: 600;
+      color:#fff;
+      text-transform: uppercase;
+      border-width: 0;
+      width: auto;
+      margin-left: 0px;
+    }
+
+    .nav-btn-logout {
       background:rgba(0, 0, 0, 0.0);
       padding: 3px;
       font-size: 18px;
@@ -834,24 +860,38 @@ body.dark .logo img {
     margin-bottom: 10px;
   }
 
+  .mvp-form-holder {
+    background:#ffffff;
+    border:rgba(254, 254, 254, 0.7);
+    border-style: solid;
+    border-radius: 15px;
+    margin: auto;
+    width: 65%;
+    box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.2);
+    padding:15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-content: center;
+    align-items: center;
+  }
+
+  .mvp-form {
+    width: 100%;
+    align-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding-left: 50px;
+  }
+
+  .checkbox-holder {
+    margin: 5px;
+  }
+
   .nom-image {
     border-radius: 50%;
     width: 100px;
     height: 100px;
     object-fit: cover;
-  }
-
-  @media (max-width: 991px) {
-    .nom-holder {
-      width: 90%;
-    }
-    .nom-image {
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-    }
-   
   }
 
   .image-bg-holder {
@@ -864,6 +904,56 @@ body.dark .logo img {
     padding-left: 10px;
     box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2);
   }
+
+  @media (max-width: 991px) {
+    .nom-holder {
+      width: 90%;
+    }
+    .nom-image {
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+    }
+
+  .mvp-form-holder {
+    background:#ffffff;
+    border:rgba(254, 254, 254, 0.7);
+    border-style: solid;
+    border-radius: 15px;
+    margin: auto;
+    width: 90%;
+    box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.2);
+    padding:15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-content: center;
+    align-items: center;
+  }
+  .mvp-form {
+    width: 100%;
+    align-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding-left: 0px;
+    border-width: 1px;
+    border-style: solid;
+  }
+   
+  .image-bg-holder {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    background:rgba(190, 190, 190, 0.88);
+    padding-top: 5px;
+    padding-left: 5px;
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2);
+  }
+
+  }
+
+ 
 
   .nom-type-image {
     border-radius: 10%;
@@ -897,10 +987,11 @@ body.dark .logo img {
   --------------------------------------------------------------*/
   #hero {
     width: 100%;
-    height: 25vh;
+    height: 40vh;
     background-image: url("https://media-cdn.tripadvisor.com/media/photo-s/15/a6/0e/fb/nice-view-from-the-beach.jpg");
     background-size: cover;
-    margin-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
     position: relative;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
@@ -912,7 +1003,7 @@ body.dark .logo img {
     background: rgba(8, 9, 17, 0.7);
     position: absolute;
     bottom: 0;
-    top: 0;
+    top: 100px;
     left: 0;
     right: 0;
   }
@@ -920,15 +1011,17 @@ body.dark .logo img {
   #hero .hero-container {
     position: absolute;
     bottom: 0;
-    top: 0;
+    top: 100px;
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
-    text-align: center;
-    padding: 0 15px;
+    padding: 50px;
+  }
+
+  #hero .row {
+    margin: 0px;
   }
   
   #hero h1 {
@@ -941,23 +1034,38 @@ body.dark .logo img {
   
   #hero h2 {
     color: #eee;
-    margin-bottom: 50px;
+    margin-bottom: 5px;
     font-size: 24px;
+  }
+  #hero h3 {
+    color: #eee;
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+
+  #hero p {
+    color:#eee;
+    font-size: 13px;
   }
   
   
   @media (min-width: 1024px) {
     #hero {
       background-attachment: fixed;
+      
     }
   }
   
   @media (max-width: 768px) {
     #hero {
-      height: 15vh;
-      margin-top: 100px;
+      height: 45vh;
+      padding: 2px;
     }
-  
+
+    #hero .hero-container {
+      padding: 5px;
+    }
+
     #hero h1 {
       font-size: 28px;
       line-height: 36px;
@@ -966,7 +1074,7 @@ body.dark .logo img {
     #hero h2 {
       font-size: 18px;
       line-height: 24px;
-      margin-bottom: 30px;
+      margin-bottom: 5px;
     }
   }
   
@@ -1023,10 +1131,10 @@ body.dark .logo img {
 .form-select {
   padding: 5px;
     border-radius: 10px;
-    border-color: rgb(234, 239, 246);
+    border-color: rgb(255, 0, 0);
     font-size: 20px;
 }
-  
+
   /*--------------------------------------------------------------
   # Footer
   --------------------------------------------------------------*/

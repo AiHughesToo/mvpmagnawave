@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  part_one: MyString
+  part_two: MyString
+  part_three: MyString
+  wfl: MyString
+  bdays: MyString
+  anniversarys: MyString
+
+two:
+  part_one: MyString
+  part_two: MyString
+  part_three: MyString
+  wfl: MyString
+  bdays: MyString
+  anniversarys: MyString

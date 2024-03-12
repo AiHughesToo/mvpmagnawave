@@ -62,7 +62,8 @@ div.actions {
   list-style: square; }
 
 label {
-  display: block; }
+  display: block; 
+}
   
 select {
     padding: 5px;
@@ -76,13 +77,27 @@ select {
     border-color: rgba(234, 239, 246, 0.411);
     border-width: 1px;
     font-size: 20px;
-    width: 80%;
+    width: 90%;
   }
+
+
+input[type="checkbox" i] {
+  background-color: initial;
+  cursor: default;
+  appearance: auto;
+  box-sizing: border-box;
+  margin: 0px 3px 10px 3px;
+  padding: initial;
+  border: initial;
+}
 
   .btn-holder {
    margin: auto;
     width: 40%;
-   
+  }
+
+  td {
+    padding: 0px; 
   }
 
   .create-button {
@@ -98,7 +113,7 @@ select {
     border: 2px solid rgb(137, 137, 137);
     background: #26336300;
     color: rgb(50, 51, 53);
-    width: auto;
+   
     align-self: center;
   }
   

@@ -4,24 +4,34 @@
 <% @uniq_noms = @exp_nom.uniq {|n| n[:receiver_name]} %>
 <%= form_with(model: mvpwin) do |form| %>
 
-  <div class="field">
+<div class="col-10 justify-content-center">
  
   <% @uniq_noms.each do |nom| %>
-    
+    <% label_name = nom.receiver_name + "(" + String(@c_noms.count { |n| n[:receiver_name] == nom.receiver_name }) + ")" %>
+
+    <div class="checkbox-holder">
     <label>
-      <%= form.check_box :winner_ids, { multiple: true }, Integer(nom.user_id), nil %>
-      <%= nom.receiver_name %> (<%= @c_noms.count { |n| n[:receiver_name] == nom.receiver_name } %>)
+    <table>
+      <tr>
+        <td><%= form.check_box :winner_ids, { multiple: true }, Integer(nom.user_id), nil %></td>
+        <td><h6> <%= form.label :winner_ids, label_name, {class: "checkbox-inline"} %> </h6></td>
+      </tr>
+    </table>
+
     </label>
-    <br>
+    </div>
   <% end %>
 </div>
 
+<div class="col-12 justify-content-center">
   <div class="field">
     <%= form.label :details %>
     <%= form.text_field :details %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit  "Make MVP Winners", class: 'create-button'%>
+  </div>
   </div>
 <% end %>
+

@@ -1,0 +1,42 @@
+<%= form_with(model: announcement) do |form| %>
+  <% if announcement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(announcement.errors.count, "error") %> prohibited this announcement from being saved:</h2>
+
+      <ul>
+        <% announcement.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "Gereral" %>
+    <%= form.text_field :part_one %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Manufacturing" %>
+    <%= form.text_field :part_two %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Whats For Lunch" %>
+    <%= form.text_field :wfl %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bdays %>
+    <%= form.text_field :bdays %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Anniversaries" %>
+    <%= form.text_field :anniversarys %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'create-button'%>
+  </div>
+<% end %>

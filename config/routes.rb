@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :announcements
   resources :mvpwins
   get 'user/secret_update/:id' => 'users#secret_admin_update'
   resources :nominations
