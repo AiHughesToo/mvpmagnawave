@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'pages/tv-view'
+  get 'pages/tv_view'
   resources :announcements
   resources :mvpwins
   get 'user/secret_update/:id' => 'users#secret_admin_update'

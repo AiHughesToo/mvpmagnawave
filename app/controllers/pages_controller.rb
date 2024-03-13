@@ -1,4 +1,4 @@
 class PagesController < ApplicationController
-  def tv-view
+  def tv_view
   end
 end

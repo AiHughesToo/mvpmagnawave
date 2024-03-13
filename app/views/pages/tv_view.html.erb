@@ -1,3 +1,5 @@
+<% @nominations = Nomination.where(created_at: 2.weeks.ago..Time.now).order(created_at: :desc) %>
+
 <!-- ======= Nomination Section ======= -->
 <section id="nom" class="nom-section">
 
@@ -33,4 +35,3 @@
     <% end %>
   </div>
 </section>
-
