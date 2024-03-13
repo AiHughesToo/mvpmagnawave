@@ -114,14 +114,14 @@
       <div class="row" >
          <h2>Announcements</h2>
       </div>
+      <% if announce %>
       <div class="row">
          <div class="col-md-6">
            <p><%=announce.part_one %></p>
-           
          </div>
+
          <div class="col-md-4">
            <p><%=announce.part_two %></p>
-          
          </div>
          <div class="col-md-2">
           
@@ -134,8 +134,9 @@
            <p><%=announce.anniversarys %></p>
            </div>  
          </div>
-      </div>
 
+      </div>
+       <% end %>
       <div class="row">
         <h3>Whats For Lunch? <%=announce.wfl %></h3>
       </div>
