@@ -1,11 +1,22 @@
-<% @nominations = Nomination.where(created_at: 2.weeks.ago..Time.now).order(created_at: :desc) %>
+<% @nominations = Nomination.where(created_at: 6.weeks.ago..Time.now) %>
 
+<script type="text/javascript">         
+      var index = 1;
+      document.getElementById("header").innerHTML = ' ';
+      document.getElementById("hero").style.marginTop='-145px';
+
+      function updateDiv() {
+        location.reload();
+      }
+
+      var timer = setInterval(updateDiv, 30000);
+</script>
 <!-- ======= Nomination Section ======= -->
 <section id="nom" class="nom-section">
 
   <div id="nom-container" class="home-page-notifications">
-  
-    <% @nominations.each do |nomination| %>
+   
+    <% @nominations.shuffle.take(4).each do |nomination| %>
       <div class="nom-holder" > 
       <div class="container mt-2">
       <div class="row">
@@ -17,9 +28,7 @@
         <div class="col-md-8">
           <h2><%= nomination.receiver_name %></h2>
           <p><%= nomination.nom_body %></p>
-          <% if current_user.admin %>
-          <p>BY: <%= nomination.sender_name %></p>
-        <% end %>
+          <p><%= nomination.created_at.month %>/<%= nomination.created_at.day %> </p>
         </div>
         <div class="col-md-2">
         <% if nomination.nom_type == "mvp"%>

@@ -38,38 +38,13 @@
   h6 {
     font-family: "Raleway", sans-serif;
   }
-  
-  /*--------------------------------------------------------------
-  # Back to top button
-  --------------------------------------------------------------*/
-  .back-to-top {
-    position: fixed;
-    visibility: hidden;
-    opacity: 0;
-    right: 15px;
-    bottom: 15px;
-    z-index: 996;
-    background: #63768d;
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
-    transition: all 0.4s;
+
+  h6 {
+    padding-left: 10px;
   }
-  
-  .back-to-top i {
-    font-size: 28px;
-    color: #fff;
-    line-height: 0;
-  }
-  
-  .back-to-top:hover {
-    background: #FFA62B;
-    color: #fff;
-  }
-  
-  .back-to-top.active {
-    visibility: visible;
-    opacity: 1;
+
+  form {
+    width: 90%;
   }
   
   /*--------------------------------------------------------------
@@ -669,7 +644,7 @@ body.dark .logo img {
     border-color:#8fc04e;
   }
   
-  @media (max-width: 991px) {
+  @media (max-width: 768px) {
     .mobile-nav-toggle {
       display: block;
     }
@@ -811,7 +786,7 @@ body.dark .logo img {
   }
   
   .navbar-earlycollapse {
-    @media (max-width: 991px) {
+    @media (max-width: 768px) {
       .navbar-header, .navbar-nav, .navbar-nav>li {
         float: left;
       }
@@ -904,8 +879,21 @@ body.dark .logo img {
     padding-left: 10px;
     box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2);
   }
+  .mobile-name-holder {
+    display: none;
+  }
+  .desktop-name-holder{
+    display: block;
+  }
+  .mobile-img-holder {
+    display: none;
+  }
 
-  @media (max-width: 991px) {
+  .desktop-img-holder {
+    display: block;
+  }
+
+  @media (max-width: 768px) {
     .nom-holder {
       width: 90%;
     }
@@ -951,9 +939,34 @@ body.dark .logo img {
     box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2);
   }
 
+  .mobile-name-holder {
+    display: block;
+    padding-top: 28px;
+    padding-left: 10px;
+  }
+  .mobile-img-holder {
+    display: block;
+  }
+  .desktop-name-holder{
+    display: none;
+  }
+  .desktop-img-holder {
+    display: none;
   }
 
- 
+  h2{
+    font-size: 20px;
+  }
+
+  .nom-type-image {
+    border-radius: 10%;
+    width: 80px;
+    height: 80px;
+   
+  }
+
+  }
+
 
   .nom-type-image {
     border-radius: 10%;
@@ -1003,7 +1016,7 @@ body.dark .logo img {
     background: rgba(8, 9, 17, 0.7);
     position: absolute;
     bottom: 0;
-    top: 100px;
+    top: 65px;
     left: 0;
     right: 0;
   }
@@ -1052,28 +1065,27 @@ body.dark .logo img {
   @media (min-width: 1024px) {
     #hero {
       background-attachment: fixed;
-      
     }
   }
   
   @media (max-width: 768px) {
     #hero {
-      height: 45vh;
+      height: 53vh;
       padding: 2px;
     }
 
     #hero .hero-container {
-      padding: 5px;
+      padding: 10px;
     }
 
     #hero h1 {
-      font-size: 28px;
+      font-size: 24px;
       line-height: 36px;
     }
   
     #hero h2 {
-      font-size: 18px;
-      line-height: 24px;
+      font-size: 16px;
+      line-height: 22px;
       margin-bottom: 5px;
     }
   }
@@ -1139,7 +1151,6 @@ body.dark .logo img {
   # Footer
   --------------------------------------------------------------*/
   #footer {
-    background: url("../img/footer-bg.jpg") center center no-repeat;
     color: #fff;
     font-size: 14px;
     position: relative;

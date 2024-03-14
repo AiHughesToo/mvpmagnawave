@@ -1,3 +1,6 @@
+<% usersArray =  User.where.not(id: current_user.id).order('last_name') %>
+<% nonAdmins = usersArray.select {|user| !user["admin"]} %>
+
 <%= form_with(model: nomination) do |form| %>
   <% if nomination.errors.any? %>
     <div id="error_explanation">
@@ -19,7 +22,7 @@
 
   <div class="field">
     <%= form.label "Who are you nominating" %>
-    <%= form.select(:user_id, User.where.not(id: current_user.id).order('last_name').collect { |user| [user.first_name + " " + user.last_name, user.id] }) %>
+    <%= form.select(:user_id, nonAdmins.collect { |user| [user.first_name + " " + user.last_name, user.id] }) %>
   </div>
 
   <div class="field">
@@ -27,7 +30,6 @@
     <%= form.text_field :nom_body %>
   </div>
 
-  
  
   <div class="actions">
     <div class="btn-holder">

@@ -16,25 +16,38 @@
       <div class="nom-holder" > 
       <div class="container mt-2">
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-2 d-inline-flex justify-content-between" >
          <div id="profile-image-bg" class="image-bg-holder">
           <img src=<%= nomination.receiver_img_link %> alt="Profile Picture" class="nom-image">
          </div>
+         <div class="mobile-name-holder">
+           <h2><%= nomination.receiver_name %></h2> 
+         </div>
+         <div class="mobile-img-holder">
+         <% if nomination.nom_type == "mvp"%>
+          <img src="https://www.creativefabrica.com/wp-content/uploads/2022/11/10/MVP-gold-medal-award-on-white-background-Graphics-45934671-1-1-580x387.jpg" alt="Profile Picture" class="nom-type-image">
+        <% else %>
+          <img src="https://renegade-promotions.com/wp-content/uploads/2021/05/148-1485119_shout-out-png-download-shout-out-transparent-png.png" alt="Profile Picture" class="nom-type-image">
+        <% end %>
+        </div>
         </div>
         <div class="col-md-8">
-          <h2><%= nomination.receiver_name %></h2>
+          <div class="desktop-name-holder">
+            <h2><%= nomination.receiver_name %></h2> 
+          </div>
           <p><%= nomination.nom_body %></p>
           <% if current_user.admin %>
-          <p>BY: <%= nomination.sender_name %></p>
+            <p>BY: <%= nomination.sender_name %></p>
+          <% end %>
+        </div>
+        <div class="desktop-img-holder">
+        <div class="col-md-2 d-flex justify-content-center">
+        <% if nomination.nom_type == "mvp"%>
+          <img src="https://www.creativefabrica.com/wp-content/uploads/2022/11/10/MVP-gold-medal-award-on-white-background-Graphics-45934671-1-1-580x387.jpg" alt="Profile Picture" class="nom-type-image">
+        <% else %>
+          <img src="https://renegade-promotions.com/wp-content/uploads/2021/05/148-1485119_shout-out-png-download-shout-out-transparent-png.png" alt="Profile Picture" class="nom-type-image">
         <% end %>
         </div>
-        <div class="col-md-2">
-        <% if nomination.nom_type == "mvp"%>
-        <img src="https://www.creativefabrica.com/wp-content/uploads/2022/11/10/MVP-gold-medal-award-on-white-background-Graphics-45934671-1-1-580x387.jpg" alt="Profile Picture" class="nom-type-image">
-        <% else %>
-        <img src="https://renegade-promotions.com/wp-content/uploads/2021/05/148-1485119_shout-out-png-download-shout-out-transparent-png.png" alt="Profile Picture" class="nom-type-image">
-        <% end %>
-        
         </div>
       </div>
     </div>

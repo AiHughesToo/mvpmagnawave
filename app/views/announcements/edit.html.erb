@@ -1,11 +1,14 @@
 <div class="nom-holder" > 
-    <div class="col-md-8 col-md-offset-4">
+    <div class="col-md-12">
+    <div class="d-flex flex-column align-items-center">
+   
         <h2>Editing Announcement</h2>
 
         <%= render 'form', announcement: @announcement %>
-
+        </div>
         <%= link_to 'Show', @announcement %> |
         <%= link_to 'Back', announcements_path %>
 
+       
     </div>
 </div>
