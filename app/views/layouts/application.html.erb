@@ -66,7 +66,7 @@
         <nav class="navbar navbar-expand-md navbar-dark">
         
           <a class="navbar-brand" href="/home" target="_blank">
-            <img src="https://magnawavepemf.com/wp-content/uploads/2024/03/mwmvp_logo_sample.webp"/>
+            <img src="https://magnawaveportal.com/wp-content/uploads/2024/03/mwMVP_logo.webp"/>
           </a>	
           
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,13 +80,16 @@
               <% if user_signed_in? %>
                
               <% if current_user.email == "a@a.com" %>
-                <li><a class="nav-btn" href="/stats">Stats</a></li> 
+              <!--  <li><a class="nav-btn" href="/stats">Stats</a></li>  -->
               <% end %>
+              <% if !current_user.admin %>
               <li><a class="nav-btn" href="/users/<%= current_user.id %>">My Profile</a></li>
+              <% end %>
                  <% if current_user.admin %>
                  <li><a class="nav-btn" href="/users">Users</a></li> 
                  <li><a class="nav-btn" href="/mvpwins/new">MVP</a></li> 
                  <li><a class="nav-btn" href="/announcements/">Announcements</a></li> 
+                 <li><a class="nav-btn" href="/achievemnets/">Achievements</a></li> 
                  <% end %>
                 <%= button_to 'Logout', destroy_user_session_path, {class: 'nav-btn-logout'} %>
               <% else %>

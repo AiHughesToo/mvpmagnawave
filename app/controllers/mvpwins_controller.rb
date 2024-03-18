@@ -24,14 +24,21 @@ class MvpwinsController < ApplicationController
     @mvpwin = Mvpwin.new(mvpwin_params)
 
     # look up each user stat and add in the mvp win 
-    p "im here"
+  
     mvpwin_params[:winner_ids].each do |win|
       stat = Stat.where(user_id: Integer(win))
         p stat
         stat[0].mvp_wins = (stat[0].mvp_wins || 0) + 1
         stat[0].save
+
+        # award the user with achievement of first mvp win
+        user = User.find(Integer(win))
+        if stat[0].mvp_wins == 1
+          user.achievements << 2
+          user.save
+        end
     end
-    p "now here"
+   
 
     respond_to do |format|
       if @mvpwin.save

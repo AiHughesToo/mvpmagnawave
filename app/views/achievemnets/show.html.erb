@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @achievemnet.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @achievemnet.description %>
+</p>
+
+<p>
+  <strong>Image link:</strong>
+  <%= @achievemnet.image_link %>
+</p>
+
+<%= link_to 'Edit', edit_achievemnet_path(@achievemnet) %> |
+<%= link_to 'Back', achievemnets_path %>

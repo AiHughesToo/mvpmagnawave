@@ -16,7 +16,7 @@
       </div>
       <div class="row">
             <div class="col-md-3">
-              
+              <p><%= current_user.mvp_sent %></p>
             </div>
             <div class="col-md-3">
               <p>Nominations Sent:<%= current_user.stat.noms_sent%></p>
@@ -31,6 +31,27 @@
   </div>
 </div>
 
+<div class="nom-holder">
+<div class="container-fluid">
+<div class="ach_holder">
+  <h4 style="color: '#fff;'"> < Achievements ></h4>
+  <div class="row flex-nowrap overflow-auto">
+    <% Achievemnet.all.each do |a| %>
+      <% if current_user.achievements.include? a.id %>
+      <div class="col-sm-3">
+          <div class="achievement" style="background-image: url('<%= a.image_link %>');"><%= a.title %></div>
+      </div>
+      <% else %>
+      <div class="col-sm-3">
+          <div class="achievement" style="background-image: url('https://magnawaveportal.com/wp-content/uploads/2024/03/achievement_empty.webp');"><%= a.title %></div>
+      </div>
+      <% end %>
+
+    <% end %>
+  </div>
+  </div>
+</div>
+</div>
 
 <div class="nom-holder" > 
       <div class="container mt-2">
@@ -51,8 +72,7 @@
        
       </div>
       <div class="col-md-8">
-        <h2><%= nomination.receiver_name %></h2>
-        <p><%= nomination.nom_body %></p>
+        <h4><%= nomination.nom_body %></h4>
       </div>
       <div class="col-md-2">
       

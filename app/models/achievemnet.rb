@@ -1,0 +1,2 @@
+class Achievemnet < ApplicationRecord
+end

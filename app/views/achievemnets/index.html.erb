@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Achievemnets</h1>
+
+
+<div class="container-fluid">
+  <div class="ach_holder">
+    <div class="row">
+    <% @achievemnets.each do |achievemnet| %>
+      <div class="achievement" style="background-image: url('<%= achievemnet.image_link %>');"><%= achievemnet.title %></div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'New Achievemnet', new_achievemnet_path %>

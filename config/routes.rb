@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :achievemnets
   get 'pages/tv_view'
   resources :announcements
   resources :mvpwins

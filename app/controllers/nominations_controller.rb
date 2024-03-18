@@ -28,6 +28,7 @@ class NominationsController < ApplicationController
 
   # POST /nominations or /nominations.json
   def create
+  
     rstat = Stat.where(user_id: nomination_params[:user_id])
     
     rstat[0].noms_received = (rstat[0].noms_received || 0)+ 1
@@ -45,6 +46,15 @@ class NominationsController < ApplicationController
     @nomination.sender_name = current_user.first_name
     @nomination.receiver_name = receiver.first_name + " " + receiver.last_name
     @nomination.receiver_img_link = receiver.image_link
+
+    if current_user.mvp_sent
+      @nomination.nom_type = "shoutout"
+    end
+
+    if nomination_params[:nom_type] == "mvp"
+      current_user.mvp_sent = true
+      current_user.save
+    end
 
     respond_to do |format|
       if @nomination.save
