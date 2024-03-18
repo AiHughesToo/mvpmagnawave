@@ -4,12 +4,8 @@ task :reset_mvp_sent => :environment do
   puts "Resetting noms snet..."
   puts "checking the day"
 
-  if Date.today.monday?
-    puts "today is Monday"
-  end
 
-
-  if Date.today.monday.zero?
+  if Date.today.wednesday?
     puts "today is the day!"
     users = User.all
     users.each do |u|
