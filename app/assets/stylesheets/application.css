@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require rails_emoji_picker
  */
 
  :root {
@@ -1086,7 +1087,6 @@ body.dark .logo img {
   }
 
   }
-
 
   .nom-type-image {
     border-radius: 10%;

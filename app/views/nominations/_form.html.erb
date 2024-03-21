@@ -1,6 +1,19 @@
 <% usersArray =  User.where.not(id: current_user.id).order('last_name') %>
 <% nonAdmins = usersArray.select {|user| !user["admin"]} %>
 
+<script>
+      $(function() {
+          // Initializes and creates emoji set from sprite sheet
+          window.emojiPicker = new EmojiPicker({
+              emojiable_selector: '[data-emojiable=true]',
+              assetsPath: 'http://onesignal.github.io/emoji-picker/lib/img/',
+              popupButtonClasses: 'fa fa-smile-o'
+          });
+
+          window.emojiPicker.discover();
+      });
+</script>
+
 <%= form_with(model: nomination) do |form| %>
   <% if nomination.errors.any? %>
     <div id="error_explanation">
@@ -20,16 +33,17 @@
   </div>
 
 
-  <div class="field">
+  <div class="field ">
     <%= form.label "Who are you nominating" %>
     <%= form.select(:user_id, nonAdmins.collect { |user| [user.first_name + " " + user.last_name, user.id] }) %>
   </div>
 
   <div class="field">
     <%= form.label "Say something nice:" %>
-    <%= form.text_field :nom_body %>
+    <p class="emoji-picker-container">
+      <%= form.text_field :nom_body, data: { emojiable: true } %>
+    </p>
   </div>
-
  
   <div class="actions">
     <div class="btn-holder">
@@ -37,3 +51,5 @@
     </div>
   </div>
 <% end %>
+
+
