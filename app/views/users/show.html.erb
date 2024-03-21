@@ -14,18 +14,21 @@
           <% end %>
          </div>
       </div>
+      <div>
+        <br>
+      </div>
       <div class="row">
             <div class="col-md-3">
-              <p><%= current_user.mvp_sent %></p>
+              <h6>MVP Nom Sent This Week: <%= current_user.mvp_sent ? "yes" : "no" %></h6>
             </div>
             <div class="col-md-3">
-              <p>Nominations Sent:<%= current_user.stat.noms_sent%></p>
+              <h6>Nominations Sent:<%= current_user.stat.noms_sent%></h6p>
             </div>
             <div class="col-md-3">
-              <p>Nominations Received:<%= current_user.stat.noms_received%></p>
+              <h6>Nominations Received:<%= current_user.stat.noms_received%></h6>
             </div>
             <div class="col-md-3">
-              <p>MVP Wins:<%= current_user.stat.mvp_wins%></p>
+              <h6>MVP Wins:<%= current_user.stat.mvp_wins%></h6>
             </div>
       </div>
   </div>

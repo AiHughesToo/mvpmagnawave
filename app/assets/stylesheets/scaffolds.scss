@@ -80,6 +80,16 @@ select {
     width: 90%;
   }
 
+  textarea {
+    overflow: auto;
+    resize: vertical;
+    padding: 5px;
+    border-radius: 10px;
+    border-color: rgba(234, 239, 246, 0.411);
+    border-width: 1px;
+    font-size: 20px;
+}
+
 
 input[type="checkbox" i] {
   background-color: initial;
@@ -120,5 +130,5 @@ input[type="checkbox" i] {
   .create-button:hover {
     background: #394f9e;
     color: #fff;
-    border: 1px solid #e0e6e9;
+    border: 2px solid #e0e6e9;
   }

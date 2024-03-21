@@ -13,7 +13,8 @@
   <div id="nom-container" class="home-page-notifications">
   
     <% @nominations.each do |nomination| %>
-      <div class="nom-holder" > 
+      <div id="animatedDiv + <%= nomination.id%>" class="slide-in">
+      <div class=" <%= nomination.nom_type == "mvp"? 'mvp-holder' : 'shout-holder'  %>" > 
       <div class="container mt-2">
       <div class="row">
         <div class="col-md-2 d-inline-flex justify-content-between" >
@@ -51,6 +52,8 @@
         </div>
       </div>
     </div>
+      </div>
+
       </div>
     <% end %>
   </div>
