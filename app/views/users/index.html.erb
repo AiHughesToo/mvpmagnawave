@@ -1,5 +1,5 @@
 <div id="nom-container" class="home-page-notifications">
-  
+<% if current_user.admin %>
     <% @users.each do |user| %>
       <div class="nom-holder" > 
       <div class="container mt-2">
@@ -12,7 +12,14 @@
         </div>
       </div>
     </div>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td> | 
+    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </div>
+    <% end %>
+
+    <% else %>
+    <div> 
+      <h3> You must be an admin view this page </h3>
+    </div>
     <% end %>
   </div>
