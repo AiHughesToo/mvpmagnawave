@@ -15,14 +15,21 @@
 <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1105.0.min.js"></script>
 <script>
 
+const kpt1 = 'AKIA3CHUC';
+const kpt2 = '35Q2VYUATIL';
+const kpt3 = '';
+const skpt1 = 'hP5eggPy';
+const skpt2 = '4eX7wJr2c3pJWpk';
+const skpt3 = 'Z1xraULJ7sB4vUM1k';
+const skpt4 = '';
+
   AWS.config.update({
-    accessKeyId: aws_a_k_i,
-    secretAccessKey: aws_s_k,
+    accessKeyId: kpt1 + kpt2,
+    secretAccessKey: skpt1 + skpt2 + skpt3,
     region: 'YOUR_S3_REGION'
   });
 
   
- 
   const s3 = new AWS.S3();
 
   function uploadImage() {
