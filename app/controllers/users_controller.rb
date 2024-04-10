@@ -28,6 +28,17 @@ class UsersController < ApplicationController
       end
     end
 
+    def destroy
+     user = User.find(params[:id])
+  
+     user.destroy
+     
+      respond_to do |format|
+        format.html { redirect_to stats_url, notice: "Stat was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    end
+
   def secret_admin_update
     respond_to do |format|
       @user = User.find(params[:id])
