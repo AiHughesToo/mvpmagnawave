@@ -917,7 +917,8 @@ body.dark .logo img {
   }
   .form-part-holder {
     margin: auto;
-    width: 60%;
+    width: 65%;
+    margin-bottom: 15px;
   }
   .nom-holder {
     background:#ffffff;

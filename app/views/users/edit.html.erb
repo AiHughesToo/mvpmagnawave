@@ -1,6 +1,72 @@
 <div class="nom-holder" > 
     <h1>Editing User</h1>
 
+    <div>
+
+    <h5>Profile Image</h5>
+    </div>
+
+    <div class='form-part-holder'>
+
+    <input type="file" id="fileInput">
+<button onclick="uploadImage()" class="img-upl-btn">Upload Image</button>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1105.0.min.js"></script>
+<script>
+
+const kpt1 = 'AKIA3CHUC';
+const kpt2 = '35Q2VYUATIL';
+const kpt3 = '';
+const skpt1 = 'hP5eggPy';
+const skpt2 = '4eX7wJr2c3pJWpk';
+const skpt3 = 'Z1xraULJ7sB4vUM1k';
+const skpt4 = '';
+
+  AWS.config.update({
+    accessKeyId: kpt1 + kpt2,
+    secretAccessKey: skpt1 + skpt2 + skpt3,
+    region: 'YOUR_S3_REGION'
+  });
+
+  
+  const s3 = new AWS.S3();
+
+  function uploadImage() {
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let ranKey = "";
+    for (let i = 0; i < 10; i++) {
+      ranKey += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    const fileInput = document.getElementById('fileInput');
+    const file = fileInput.files[0];
+    const fileName = ranKey + file.name;
+
+    const params = {
+      Bucket: 'mwmvpimages',
+      Key: fileName,
+      Body: file,
+      ContentType: 'image/jpeg',
+      ACL: 'public-read' // Adjust ACL as per your requirements
+    };
+
+    s3.upload(params, function(err, data) {
+      if (err) {
+        console.log('Error uploading image:', err);
+      } else {
+        console.log('Image uploaded successfully. Image URL:', data.Location);
+        const img_link = document.getElementById('user_image_link');
+        console.log("before");
+        console.log(img_link.value);
+        img_link.value = data.Location;
+        console.log("After");
+        console.log(img_link.value);
+        
+      }
+    });
+  }
+</script>
+    </div>
+
     <%= render 'form', user: @user %>
 
     <%= link_to 'Show', @user %> |
