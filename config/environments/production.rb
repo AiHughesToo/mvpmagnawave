@@ -94,6 +94,9 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  aws_a_k_i = ENV['AWS_ACCESS_KEY_ID'] 
+  aws_s_k = ENV['AWS_SECRET_ACCESS_KEY']
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
