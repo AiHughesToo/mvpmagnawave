@@ -16,8 +16,8 @@
 <script>
 
   AWS.config.update({
-    accessKeyId: <%= ENV['AWS_ACCESS_KEY_ID'] =>,
-    secretAccessKey: <%= ENV['AWS_SECRET_ACCESS_KEY'] =>,
+    accessKeyId:  ENV['AWS_ACCESS_KEY_ID'],
+    secretAccessKey: ENV['AWS_SECRET_ACCESS_KEY'],
     region: 'YOUR_S3_REGION'
   });
  
