@@ -915,6 +915,10 @@ body.dark .logo img {
     border-color: #0f0f0f;
     display: block;
   }
+  .form-part-holder {
+    margin: auto;
+    width: 60%;
+  }
   .nom-holder {
     background:#ffffff;
     border:rgba(254, 254, 254, 0.7);
@@ -1113,6 +1117,21 @@ body.dark .logo img {
     background: #394f9e;
     color: #fff;
     border: 2px solid #e0e6e9;
+  }
+
+  .img-upl-btn {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 19px;
+    border-radius: 25px;
+    transition: 0.5s;
+    margin-top: 10px;
+    background: #394f9e;
+    border: 2px solid #fff;
+    color: #fff;
   }
 
   /*--------------------------------------------------------------
